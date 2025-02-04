@@ -4,6 +4,9 @@ body {
     margin: 0;
     padding: 0;
     color: #E8DFCA;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -26,6 +29,7 @@ body {
 }
 
 .main {
+    flex: 1;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -79,7 +83,7 @@ body {
 
 .profile-pic {
     width: 100%;
-    max-width: 250px; /* Adjusted for better responsiveness */
+    max-width: 250px;
     height: auto;
     border-radius: 50%;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
@@ -97,7 +101,9 @@ footer.footer {
     text-align: center;
     color: #E8DFCA;
     margin-top: 20px;
-    position: relative;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 .footer .social-links {
@@ -137,7 +143,7 @@ footer.footer {
     }
 
     .profile-pic {
-        max-width: 150px; /* Adjusted for better responsiveness on medium devices */
+        max-width: 150px;
     }
 
     .projects-section {
@@ -152,7 +158,7 @@ footer.footer {
     }
 
     .profile-pic {
-        max-width: 200px; /* Adjusted for better responsiveness on larger devices */
+        max-width: 200px;
     }
 
     .projects-section {
