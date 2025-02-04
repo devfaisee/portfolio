@@ -97,6 +97,7 @@ footer.footer {
     text-align: center;
     color: #E8DFCA;
     margin-top: 20px;
+    position: relative;
 }
 
 .footer .social-links {
