@@ -78,7 +78,8 @@ body {
 }
 
 .profile-pic {
-    max-width: 100%;
+    width: 100%;
+    max-width: 250px; /* Adjusted for better responsiveness */
     height: auto;
     border-radius: 50%;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
@@ -126,4 +127,34 @@ footer.footer {
 
 .scroll-text {
     animation: scrollAnimation 1s ease-out;
+}
+
+@media (min-width: 600px) {
+    .main {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .profile-pic {
+        max-width: 150px; /* Adjusted for better responsiveness on medium devices */
+    }
+
+    .projects-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .main {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .profile-pic {
+        max-width: 200px; /* Adjusted for better responsiveness on larger devices */
+    }
+
+    .projects-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
