@@ -33,7 +33,13 @@ body {
     align-items: center;
 }
 
-.main img {
+.about-content {
+    max-width: 600px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
     max-width: 300px;
     height: auto;
     border-radius: 50%;
@@ -41,29 +47,55 @@ body {
     filter: brightness(0.9);
 }
 
-.main img:hover {
+.profile-pic:hover {
     transform: scale(1.1);
     filter: brightness(1);
-}
-
-.main form {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-}
-
-.main form input[type="text"],
-.main form input[type="email"],
-.main form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    box-sizing: border-box;
 }
 
 .intro {
     font-style: italic;
     color: #C0C0C0;
+}
+
+.projects-section {
+    margin-bottom: 20px;
+}
+
+.projects-section .project {
+    background-color: #2A6D4E;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.projects-section .project:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+footer.footer {
+    background-color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    color: #E8DFCA;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .social-links a {
+    color: #E8DFCA;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer .social-links a:hover {
+    color: #C0C0C0;
+}
+
+.scroll-text {
+    animation: scrollAnimation 1s ease-out;
 }
 
 @keyframes scrollAnimation {
@@ -77,22 +109,22 @@ body {
     }
 }
 
-.scroll-text {
-    animation: scrollAnimation 1s ease-out;
-}
-
 @media (min-width: 600px) {
     .main {
         flex-direction: row;
         justify-content: space-around;
     }
 
-    .main img {
+    .about-content {
+        max-width: 400px;
+    }
+
+    .profile-pic {
         max-width: 200px;
     }
 
-    .main form {
-        max-width: 400px;
+    .projects-section {
+        max-width: 800px;
     }
 }
 
@@ -102,11 +134,15 @@ body {
         justify-content: space-between;
     }
 
-    .main img {
+    .about-content {
+        max-width: 350px;
+    }
+
+    .profile-pic {
         max-width: 250px;
     }
 
-    .main form {
-        max-width: 350px;
+    .projects-section {
+        max-width: 1000px;
     }
 }
