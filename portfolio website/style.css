@@ -8,39 +8,77 @@ body {
 
 .navbar {
     background-color: #333;
-    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    padding: 14px 0;
 }
 
 .navbar a {
-    float: left;
-    display: block;
     color: #E8DFCA;
-    text-align: center;
-    padding: 14px 20px;
     text-decoration: none;
+    padding: 0 20px;
 }
 
 .navbar a:hover {
     background-color: #ddd;
     color: black;
+    padding: 14px 20px;
 }
 
 .main {
     padding: 20px;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
-.about-content {
-    max-width: 600px;
-    text-align: left;
-    margin-bottom: 20px;
+.intro-section, .profile-section, .projects-section {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.intro-section {
+    text-align: center;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+}
+
+.projects-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 600px) {
+    .projects-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .projects-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.projects-section .project {
+    background-color: #2A6D4E;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.projects-section .project:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .profile-pic {
-    max-width: 300px;
+    max-width: 100%;
     height: auto;
     border-radius: 50%;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
@@ -52,50 +90,27 @@ body {
     filter: brightness(1);
 }
 
-.intro {
-    font-style: italic;
-    color: #C0C0C0;
-}
-
-.projects-section {
-    margin-bottom: 20px;
-}
-
-.projects-section .project {
-    background-color: #2A6D4E;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-}
-
-.projects-section .project:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-}
-
 footer.footer {
     background-color: #333;
     padding: 10px 20px;
     text-align: center;
     color: #E8DFCA;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    margin-top: 20px;
+}
+
+.footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .footer .social-links a {
     color: #E8DFCA;
-    margin: 0 10px;
     text-decoration: none;
 }
 
 .footer .social-links a:hover {
     color: #C0C0C0;
-}
-
-.scroll-text {
-    animation: scrollAnimation 1s ease-out;
 }
 
 @keyframes scrollAnimation {
@@ -109,40 +124,6 @@ footer.footer {
     }
 }
 
-@media (min-width: 600px) {
-    .main {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .about-content {
-        max-width: 400px;
-    }
-
-    .profile-pic {
-        max-width: 200px;
-    }
-
-    .projects-section {
-        max-width: 800px;
-    }
-}
-
-@media (min-width: 900px) {
-    .main {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .about-content {
-        max-width: 350px;
-    }
-
-    .profile-pic {
-        max-width: 250px;
-    }
-
-    .projects-section {
-        max-width: 1000px;
-    }
+.scroll-text {
+    animation: scrollAnimation 1s ease-out;
 }
